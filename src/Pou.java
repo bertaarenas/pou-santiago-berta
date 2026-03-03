@@ -1,17 +1,15 @@
 public class Pou {
 
     private String nombre;
-    private int hambre = 50;
-    private int sueno = 50;
+    private int hambre = 100;
     private int felicidad = 50;
-    private int dinero = 10;
-    private int energia = 50;
+    private int dinero = 100;
+    private int energia = 100;
 
     public Pou(String nombre, int hambre, int sueno, int felicidad, int dinero, int energia){
 
         this.nombre = nombre;
         this.hambre = hambre;
-        this.sueno = sueno;
         this.felicidad = felicidad;
         this.dinero = dinero;
         this.energia = energia;
@@ -23,29 +21,75 @@ public class Pou {
         return nombre;
     }
 
+        // hambre //
+
     public int getHambre(){
 
         return hambre;
     }
 
-    public int getSueno(){
-
-        return sueno;
+    public void setHambre(int hambre){
+        if(hambre<0){
+            this.hambre = 0;
+        } else if (hambre > 100) {
+            this.hambre = 100;
+        }else {
+            this.hambre = hambre;
+        }
     }
+
+
+    // felicidad //
 
     public int getFelicidad(){
 
         return felicidad;
     }
 
+    public void setFelicidad(int felicidad) {
+        if (felicidad < 0) {
+            this.felicidad = 0;
+        } else if (felicidad > 100) {
+            this.felicidad = 100;
+
+        }else {
+            this.felicidad = felicidad;
+        }
+
+    }
+
+    // Dinero //
+
     public int getDinero(){
 
         return dinero;
     }
 
+    public void setDinero(int dinero) {
+        if (dinero < 0){
+            this.dinero = 0;
+        } else if (dinero > 100) {
+            this.dinero = 100;
+        }else {
+            this.felicidad = felicidad;
+        }
+    }
+
+    // Energia //
+
     public int getEnergia(){
 
         return energia;
+    }
+
+    public void setEnergia(int energia){
+        if (energia < 0){
+            this.energia = 0;
+        } else if (energia > 100) {
+            this.energia = 100;
+        }else {
+            this.energia = dinero;
+        }
     }
 
     public boolean vivo(){
@@ -53,12 +97,20 @@ public class Pou {
         return true;
     }
 
+    // Estado
+
+    public void mostrarEstado() {
+        System.out.println("Nivel de hambre: " + hambre);
+        System.out.println("Nivel de dinero: " + dinero);
+        System.out.println("Nivel de felicida" + felicidad);
+        System.out.println("Nivel de energia" + energia);
+    }
+
     @Override
     public String toString() {
         return "Pou{" +
                 "nombre='" + nombre + '\'' +
                 ", hambre=" + hambre +
-                ", sueno=" + sueno +
                 ", felicidad=" + felicidad +
                 ", dinero=" + dinero +
                 ", energia=" + energia +
