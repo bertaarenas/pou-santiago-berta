@@ -1,4 +1,4 @@
-public class Pou {
+public class Modelo {
 
     private String nombre;
     private int hambre = 100;
@@ -6,7 +6,7 @@ public class Pou {
     private int dinero = 100;
     private int energia = 100;
 
-    public Pou(String nombre, int hambre, int sueno, int felicidad, int dinero, int energia){
+    public Modelo(String nombre, int hambre, int sueno, int felicidad, int dinero, int energia){
 
         this.nombre = nombre;
         this.hambre = hambre;
