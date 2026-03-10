@@ -6,7 +6,7 @@ public class Modelo {
     private int dinero = 100;
     private int energia = 100;
 
-    public Modelo(String nombre, int hambre, int sueno, int felicidad, int dinero, int energia){
+    public Modelo(String nombre, int hambre,  int felicidad, int dinero, int energia){
 
         this.nombre = nombre;
         this.hambre = hambre;
@@ -97,23 +97,5 @@ public class Modelo {
         return true;
     }
 
-    // Estado
-
-    public void mostrarEstado() {
-        System.out.println("Nivel de hambre: " + hambre);
-        System.out.println("Nivel de dinero: " + dinero);
-        System.out.println("Nivel de felicida" + felicidad);
-        System.out.println("Nivel de energia" + energia);
-    }
-
-    @Override
-    public String toString() {
-        return "Pou{" +
-                "nombre='" + nombre + '\'' +
-                ", hambre=" + hambre +
-                ", felicidad=" + felicidad +
-                ", dinero=" + dinero +
-                ", energia=" + energia +
-                '}';
-    }
+    
 }
