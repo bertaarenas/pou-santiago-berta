@@ -65,11 +65,11 @@ public class Vista {
     public void verTienda(){
 
         System.out.println("\nTIENDA");
-        System.out.println("1. Hamburguesa (20€)");
-        System.out.println("2. Kebab (15€)");
-        System.out.println("3. Taco (10€)");
-        System.out.println("4. Sushi (25€)");
-        System.out.println("5. Pan (5€)");
+        System.out.println("1. Hamburguesa (20)");
+        System.out.println("2. Kebab (15)");
+        System.out.println("3. Taco (10)");
+        System.out.println("4. Sushi (25)");
+        System.out.println("5. Pan (5)");
         System.out.println("6. Salir");
     }
 
