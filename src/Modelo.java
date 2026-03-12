@@ -1,12 +1,19 @@
 public class Modelo {
 
     private String nombre;
-    private int hambre = 100;
-    private int felicidad = 50;
-    private int dinero = 100;
-    private int energia = 100;
+    private int hambre;
+    private int felicidad;
+    private int dinero;
+    private int energia;
 
-    public Modelo(String nombre, int hambre,  int felicidad, int dinero, int energia){
+
+    private int hamburguesa;
+    private int kebab;
+    private int taco;
+    private int sushi;
+    private int pan;
+
+    public Modelo(String nombre, int hambre, int felicidad, int dinero, int energia) {
 
         this.nombre = nombre;
         this.hambre = hambre;
@@ -14,88 +21,135 @@ public class Modelo {
         this.dinero = dinero;
         this.energia = energia;
 
+        this.hamburguesa = 0;
+        this.kebab = 0;
+        this.taco = 0;
+        this.sushi = 0;
+        this.pan = 0;
     }
 
-    public String getNombre(){
+    // -- NOMBRE --//
 
+    public String getNombre() {
         return nombre;
     }
 
-        // hambre //
+    // -- HAMBRE -- //
 
-    public int getHambre(){
-
+    public int getHambre() {
         return hambre;
     }
 
-    public void setHambre(int hambre){
-        if(hambre<0){
+    public void setHambre(int hambre) {
+
+        if (hambre < 0) {
             this.hambre = 0;
         } else if (hambre > 100) {
             this.hambre = 100;
-        }else {
+        } else {
             this.hambre = hambre;
         }
     }
 
+    // -- FELICIDAD --//
 
-    // felicidad //
-
-    public int getFelicidad(){
-
+    public int getFelicidad() {
         return felicidad;
     }
 
     public void setFelicidad(int felicidad) {
+
         if (felicidad < 0) {
             this.felicidad = 0;
         } else if (felicidad > 100) {
             this.felicidad = 100;
-
-        }else {
+        } else {
             this.felicidad = felicidad;
         }
-
     }
 
-    // Dinero //
+    // --DINERO --//
 
-    public int getDinero(){
-
+    public int getDinero() {
         return dinero;
     }
 
     public void setDinero(int dinero) {
-        if (dinero < 0){
+
+        if (dinero < 0) {
             this.dinero = 0;
-        } else if (dinero > 100) {
-            this.dinero = 100;
-        }else {
-            this.felicidad = felicidad;
+        } else {
+            this.dinero = dinero;
         }
     }
 
-    // Energia //
+    // - ENERGIA -- //
 
-    public int getEnergia(){
-
+    public int getEnergia() {
         return energia;
     }
 
-    public void setEnergia(int energia){
-        if (energia < 0){
+    public void setEnergia(int energia) {
+
+        if (energia < 0) {
             this.energia = 0;
         } else if (energia > 100) {
             this.energia = 100;
-        }else {
-            this.energia = dinero;
+        } else {
+            this.energia = energia;
         }
     }
 
-    public boolean vivo(){
+    // -- INVENTARIO --//
+
+    public int getHamburguesa() {
+        return hamburguesa;
+    }
+
+    public void setHamburguesa(int hamburguesa) {
+        this.hamburguesa = hamburguesa;
+    }
+
+    public int getKebab() {
+        return kebab;
+    }
+
+    public void setKebab(int kebab) {
+        this.kebab = kebab;
+    }
+
+    public int getTaco() {
+        return taco;
+    }
+
+    public void setTaco(int taco) {
+        this.taco = taco;
+    }
+
+    public int getSushi() {
+        return sushi;
+    }
+
+    public void setSushi(int sushi) {
+        this.sushi = sushi;
+    }
+
+    public int getPan() {
+        return pan;
+    }
+
+    public void setPan(int pan) {
+        this.pan = pan;
+    }
+
+    // -- ESTDO -- //
+
+    public boolean vivo() {
+
+        if (hambre == 0 || felicidad == 0) {
+            return false;
+        }
 
         return true;
     }
-
-    
 }
