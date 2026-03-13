@@ -94,6 +94,7 @@ public class Vista {
         System.out.println((pou.isLogroJugado()   ? "[X]" : "[ ]") + " Jugador - Juega 10 veces");
         System.out.println((pou.isLogroComprado() ? "[X]" : "[ ]") + " Comprador - Compra 5 veces");
         System.out.println((pou.isLogrodormido()  ? "[X]" : "[ ]") + " Dormillon - Duerme 20 veces");
+        System.out.println("------------------------------------------------------------------------");
     }
 
     public void mensaje(String m){
