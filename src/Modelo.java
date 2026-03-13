@@ -1,3 +1,4 @@
+
 public class Modelo {
 
     private String nombre;
@@ -5,13 +6,24 @@ public class Modelo {
     private int felicidad;
     private int dinero;
     private int energia;
-
+    private int higiene;
 
     private int hamburguesa;
     private int kebab;
     private int taco;
     private int sushi;
     private int pan;
+
+    private int vecesComido;
+    private int vecesJugado;
+    private int vecesComprado;
+    private int vecesDormido;
+
+    private boolean logroComido = false;
+    private boolean logroJugado = false;
+    private boolean logroComprado = false;
+    private boolean logrodormido = false;
+
 
     public Modelo(String nombre, int hambre, int felicidad, int dinero, int energia) {
 
@@ -20,12 +32,18 @@ public class Modelo {
         this.felicidad = felicidad;
         this.dinero = dinero;
         this.energia = energia;
+        this.higiene = 100;
 
         this.hamburguesa = 0;
         this.kebab = 0;
         this.taco = 0;
         this.sushi = 0;
         this.pan = 0;
+
+        this.vecesComido = 0;
+        this.vecesJugado = 0;
+        this.vecesComprado = 0;
+        this.vecesDormido = 0;
     }
 
     // -- NOMBRE --//
@@ -100,6 +118,25 @@ public class Modelo {
         }
     }
 
+    // -- HIGIENE -- //
+
+    public int getHigiene() {
+        return higiene;
+    }
+
+    public void setHigiene(int higiene) {
+
+        if (higiene < 0) {
+            this.higiene = 0;
+        }
+        else if (higiene > 100) {
+            this.higiene = 100;
+        }
+        else {
+            this.higiene = higiene;
+        }
+    }
+
     // -- INVENTARIO --//
 
     public int getHamburguesa() {
@@ -142,11 +179,69 @@ public class Modelo {
         this.pan = pan;
     }
 
+    // Logros
+
+    public int getVecesComido() {
+        return vecesComido;
+    }
+    public void incrementarVecesComido() {
+        this.vecesComido++;
+    }
+
+    public int getVecesJugado() {
+        return vecesJugado;
+    }
+    public void incrementarVecesJugado() {
+        this.vecesJugado++;
+    }
+
+    public int getVecesComprado() {
+        return vecesComprado;
+    }
+    public void incrementarVecesComprado() {
+        this.vecesComprado++;
+    }
+
+    public int getVecesDormido() {
+        return vecesDormido;
+    }
+    public void incrementarVecesDormido() {
+        this.vecesDormido++;
+    }
+
+    public boolean isLogroComido() {
+        return logroComido;
+    }
+    public void setLogroComido() {
+        this.logroComido = true;
+    }
+
+    public boolean isLogroJugado() {
+        return logroJugado;
+    }
+    public void setLogroJugado() {
+        this.logroJugado = true;
+    }
+
+    public boolean isLogroComprado() {
+        return logroComprado;
+    }
+    public void setLogroComprado() {
+        this.logroComprado = true;
+    }
+
+    public boolean isLogrodormido() {
+        return logrodormido;
+    }
+    public void setLogrodormido() {
+        this.logrodormido = true;
+    }
+
     // -- ESTDO -- //
 
     public boolean vivo() {
 
-        if (hambre == 0 || felicidad == 0) {
+        if (hambre == 0 || felicidad == 0 || higiene == 0) {
             return false;
         }
 
